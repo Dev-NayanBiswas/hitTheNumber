@@ -56,7 +56,7 @@ function timerCounter(){
     let timeCount = document.querySelector('.timer');
 
 
-let timer = 10
+let timer = 30
 let timerID = setInterval(()=>{
     if(timer>0){
         timer--;
@@ -75,12 +75,10 @@ let timerID = setInterval(()=>{
         let localData = JSON.parse(localStorage.getItem('topScore')).best 
         console.log(localData)
 
-        if(localData>score){
-            console.log("New Score", localData)
+        if(localData<score){
             topScore.textContent=`New Record: ${localData}`
         }else{
-            topScore.textContent=`All time Best ${localData || 0}`
-            console.log(`All time Best ${localData}`)
+            topScore.textContent=`All time Best ${localData}`
         }
 
         displayScore.textContent = 0;
