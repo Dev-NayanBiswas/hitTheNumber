@@ -71,10 +71,10 @@ let timerID = setInterval(()=>{
         bestScorer(score);
         console.log(bestScorer(score));
 
-        if(score>best){
+        if(isTop){
             topScore.innerHTML=`New Record ${score}`
         }else{
-            topScore.innerHTML = `All time Best ${best}`
+            topScore.innerHTML = `All time Best ${best? best:0}`
         }
         displayScore.textContent = 0;
         bubbleContainer.appendChild(gameOver);
