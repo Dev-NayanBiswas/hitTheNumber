@@ -1,6 +1,5 @@
 import bestScorer from './localStorage.js';
 
-const {best, isTop} = bestScorer();
 
 
 
@@ -12,6 +11,7 @@ let turnNumber = document.querySelector('.turn');
 let displayScore = document.querySelector('.score');
 const finalScore = document.querySelector('#finalScore');
 const topScore = document.querySelector('#topScore');
+
 
 
 
@@ -49,14 +49,14 @@ function randomNumberGenerator(){
     return Math.floor(Math.random()*10)
 }
 
-
+let { best, isTop }=bestScorer()
 
 //! Timer Counter 
 function timerCounter(){
     let timeCount = document.querySelector('.timer');
 
 
-let timer = 20
+let timer = 10
 let timerID = setInterval(()=>{
     if(timer>0){
         timer--;
@@ -64,18 +64,25 @@ let timerID = setInterval(()=>{
     }else{
         timer = 0;
         turnNumber.textContent = 0;
-        
         gameOver.removeAttribute('hidden');
         bubbleContainer.innerHTML = "";
-        finalScore.textContent = score;
+        
+        //! Storing Data to local
         bestScorer(score);
-        console.log(bestScorer(score));
+        
+        
+        finalScore.textContent = score;
+        let localData = JSON.parse(localStorage.getItem('topScore')).best 
+        console.log(localData)
 
-        if(isTop){
-            topScore.innerHTML=`New Record ${score}`
+        if(localData>score){
+            console.log("New Score", localData)
+            topScore.textContent=`New Record: ${localData}`
         }else{
-            topScore.innerHTML = `All time Best ${best? best:0}`
+            topScore.textContent=`All time Best ${localData || 0}`
+            console.log(`All time Best ${localData}`)
         }
+
         displayScore.textContent = 0;
         bubbleContainer.appendChild(gameOver);
         clearInterval(timerID);
@@ -118,3 +125,4 @@ function init(){
 }
 
 init();
+
