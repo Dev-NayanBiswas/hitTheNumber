@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./index.js" type="module" defer></script>
+    <script src="./localStorage.js" type="module" defer></script>
+</head>
+<body>
+    <h1 class="text-2xl italic font-semibold text-orange-400">Hit The Number</h1>
+    <header></header>
+    <main>
+        <section class="panel w-[80dvw] max-auto bg-green-400 rounded-md p-1 flex flex-col">
+            <section class="top_part rounded-md bg-slate-300 shadow-lg">
+                <nav class="board_panel flex justify-evenly items-center">
+                    <div class="nav_card flex flex-col-reverse items-center pt-2">
+                        <p class=" font-bold text-xs text-emerald-600 uppercase">turn</p>
+                        <div class="box h-11 aspect-square bg-green-500 rounded-md p-1">
+                            <div class="bg-gray-200 turn m-auto h-full rounded-[3px] flex justify-center items-center text-2xl font-bold text-gray-400 ">
+                                    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav_card flex flex-col-reverse items-center pt-2">
+                        <p class=" font-bold text-xs text-emerald-600 uppercase">timer</p>
+                        <div class="box h-11 aspect-square bg-green-500 rounded-md p-1">
+                            <div class="timer bg-gray-200 m-auto h-full rounded-[3px] flex justify-center items-center text-2xl font-bold text-gray-400 ">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav_card flex flex-col-reverse items-center pt-2">
+                        <p class=" font-bold text-xs text-emerald-600 uppercase">Score</p>
+                        <div class="box h-11 aspect-square bg-green-500 rounded-md p-1">
+                            <div class="bg-gray-200 score m-auto h-full rounded-[3px] flex justify-center items-center text-2xl font-bold text-gray-400 ">
+                            0
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </section>
+            <section class="bubble_container py-4 flex-1 w-full h-full relative flex flex-wrap gap-2">
+                <!-- <div class="bubble bg-gray-600 h-8 aspect-square flex items-center justify-center rounded-full text-red-600 text-xl cursor-pointer hover:bg-gray-500 active:scale-95 transition-all duration-200">8</div> -->
+                <section class="game text-center" hidden>
+                    <h1 class="text-5xl font-extrabold text-red-500 text-center">Game Over</h1>
+                    <p class="text-green-600 score_text text-xl text-center" >Your Score:<span id="finalScore">00</span></p>
+                    <p class="text-green-600 score_text text-xl text-center" ><span id="topScore">00</span></p>
+                    <button class="px-8 py-2 bg-green-900 active:translate-y-[2px] active:scale-[0.97] hover:bg-green-700 text-lg font-semibold text-green-100 rounded-md transition-all duration-200 uppercase my-5" id="tryAgain">Try Again</button>
+                    
+                </section>
+            </section>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>

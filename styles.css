@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Monolisa", Courier, monospace;
+}
+body {
+    background: rgb(1, 66, 69);
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  min-block-size: 100dvh;
+}
+
+.game{
+  min-width: 100%;
+  margin-inline: auto;
+}
